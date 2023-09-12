@@ -16,9 +16,9 @@ def get_utc_time():
     return current_time.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 def get_github():
-    repo_url = ""
-    file_url = ""
-    return f"{repo_url}/{file_url}/"
+    repo_url = "https://github.com/frank-Mwangi/HNG-backend_stage_one"
+    file_url = "/app.py"
+    return f"{repo_url}/blob/main/{file_url}/"
 
 def validate_utc_time():
     utc_time = datetime.strptime(get_utc_time(), "%Y-%m-%dT%H:%M:%SZ")
@@ -35,7 +35,7 @@ def get_info():
     if not validate_utc_time():
         return jsonify({"error": "Invalid UTC time"}), 400
     github_file_url = get_github()
-    github_repo_url = ""
+    github_repo_url = "https://github.com/frank-Mwangi/HNG-backend_stage_one"
 
     response = {
         "slack_name": slack_name,
